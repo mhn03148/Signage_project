@@ -16,17 +16,14 @@ def crawling():
 
             for j in range(len(key_list)):
                 if key_list[j] in title.get_text().strip():
-                    if key_list[j] == '':
-                        if content_dic.get("기타", -1) == -1:
-                            content_dic["기타"] = [title.get_text().strip()]
-                        else:
-                            content_dic["기타"].append(title.get_text().strip())
                     if content_dic.get(key_list[j], -1) == -1:
                         content_dic[key_list[j]] = [title.get_text().strip()]
                     else:
                         content_dic[key_list[j]].append(title.get_text().strip())
                     break
-
+        content_dic['기타'] = content_dic['']
+        del content_dic['']
+        print(content_dic)
         return content_dic
     else:
         print(response.status_code)
