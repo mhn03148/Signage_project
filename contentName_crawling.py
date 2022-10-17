@@ -23,6 +23,8 @@ def crawling():
                     break
         content_dic['기타'] = content_dic['']
         del content_dic['']
+        content_dic['[학생]'] = content_dic['학생']
+        del content_dic['[학생']
         return content_dic
     else:
         return content_dic
