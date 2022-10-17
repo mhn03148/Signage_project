@@ -23,8 +23,7 @@ def crawling():
                     break
         content_dic['기타'] = content_dic['']
         del content_dic['']
-        print(content_dic)
         return content_dic
     else:
-        print(response.status_code)
-crawling()
+        return content_dic
+
